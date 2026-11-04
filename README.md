@@ -1,5 +1,7 @@
 # Web profil Angga Nur Salim
 
+**Situs:** https://profil-wheat.vercel.app
+
 Satu tautan untuk semua portofolio: profil singkat, kartu proyek, halaman studi kasus per proyek, dan tombol WhatsApp.
 Web statis (React + Vite), tanpa server dan tanpa memanggil API.
 
