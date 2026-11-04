@@ -1,0 +1,27 @@
+{
+  "name": "profil-angga",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "cek-data": "node scripts/cek-data.mjs",
+    "build": "node scripts/cek-data.mjs && vite build && node scripts/halaman-statis.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "og-image": "node scripts/buat-og-image.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.2.1",
+    "vite": "^8.3.5",
+    "vitest": "^5.1.0"
+  }
+}

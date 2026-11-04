@@ -1,0 +1,119 @@
+[
+  {
+    "id": "kasir",
+    "nama": "Kasir Stok Otomatis",
+    "urutan": 1,
+    "judul": "Kasir yang menghitung stok bahan sendiri",
+    "judulSorot": "stok bahan",
+    "untuk": ["kedai minuman", "kedai kopi", "warung makan"],
+    "masalah": "Bahan diukur dengan gram, ml, sendok, dan porsi. Crew baru sering salah hitung, stok selalu selisih, dan tidak ketahuan selisihnya terjadi di shift siapa.",
+    "solusi": "Crew cukup menekan menu. Stok setiap bahan berkurang sendiri sesuai resep, dan pemilik melihat selisih per shift.",
+    "masalahPanjang": "Di kedai minuman, satu gelas Thai Tea memakai creamer dalam sendok, air teh dalam garis gelas, dan topping dalam gram. Pemilik tahu stok berkurang lebih cepat dari seharusnya, tapi tidak tahu penyebabnya: takaran yang boros, salah catat barang masuk, atau hilang. Satu orang menjual, mencatat, dan menghitung stok, jadi selisihnya tidak bisa dilacak ke siapa pun.",
+    "demo": {
+      "url": "https://kasir-stok-otomatis-yr3j.vercel.app",
+      "akun": null,
+      "catatan": "Data contoh tiga usaha fiktif. Masuk cukup dengan memilih nama."
+    },
+    "repo": "https://github.com/AnggaNurSalimDev/kasir-stok-otomatis",
+    "langkah": [
+      "Masuk sebagai crew, buka shift, lalu jual 2 gelas.",
+      "Masuk sebagai owner, buka Bahan, dan lihat stok bahan berkurang sesuai resep.",
+      "Buka Ringkasan → detail shift untuk melihat selisih per bahan dan shift mana yang perlu dicek."
+    ],
+    "keputusan": [
+      {
+        "judul": "Crew tidak pernah melihat angka stok saat menghitung",
+        "isi": "Kalau angka itu terlihat, crew cenderung menyalinnya dan selisih tidak pernah muncul. Sistem bahkan tidak mengirim angka stok ke layar crew."
+      },
+      {
+        "judul": "Setiap pergantian shift, stok dihitung orang yang berbeda",
+        "isi": "Dengan begitu selisih terkunci ke satu shift, tidak menumpuk berhari-hari tanpa jejak."
+      },
+      {
+        "judul": "Shift yang lupa ditutup tetap tercatat \"tidak ditutup\"",
+        "isi": "Crew berikutnya membuka shift baru tanpa menutup shift orang lain, jadi namanya tidak tercatat sebagai penutup shift yang tidak ia kerjakan. Versi sebelumnya membuat crew berikutnya hampir pasti menutup shift orang lain tanpa sengaja.",
+        "catatan": "Ditemukan saat meninjau desain"
+      }
+    ],
+    "gambar": {
+      "kartu": { "src": "/proyek/kasir/kartu.webp", "alt": "Layar kasir Teh Senja: kategori menu, kartu Thai Tea, dan keranjang pesanan" },
+      "galeri": [
+        { "src": "/proyek/kasir/tiga-usaha.webp", "alt": "Layar kasir tiga usaha contoh berdampingan: Teh Senja, Kopi Lintas bertema gelap, dan Dapur Mie Rasa", "keterangan": "Satu sistem, tiga usaha contoh. Masing-masing punya menu, bahan, satuan, dan tampilannya sendiri." },
+        { "src": "/proyek/kasir/detail-shift.webp", "alt": "Halaman detail shift untuk owner: tabel selisih bahan kunci dengan status wajar atau perlu dicek", "keterangan": "Yang dilihat pemilik setelah shift ditutup: bahan mana yang selisih, berapa, dan apakah masih wajar." }
+      ]
+    },
+    "belum": [
+      "Belum diuji di kedai sungguhan. Ini langkah berikutnya.",
+      "Belum bisa mencetak ke printer struk thermal.",
+      "Pesanan GoFood/GrabFood di demo masih simulasi yang diberi label jelas. Integrasi sungguhan perlu pendaftaran ke setiap aplikasi."
+    ],
+    "teknis": {
+      "stack": ["React 18", "Vite", "zod", "vitest"],
+      "jumlahTest": 240,
+      "catatan": "Logika perhitungan berupa fungsi murni yang nanti dipakai juga oleh backend. Backend masih berupa rencana; demo memakai mock API yang mematuhi kontrak."
+    },
+    "ajakan": "Stok di usaha Anda juga sering selisih?",
+    "og": {
+      "judul": "Kasir Stok Otomatis — Angga Nur Salim",
+      "deskripsi": "Crew cukup menekan menu; stok bahan berkurang sendiri dan selisih terlihat per shift."
+    }
+  },
+  {
+    "id": "rekrut",
+    "nama": "Sistem Rekrutmen",
+    "urutan": 2,
+    "judul": "Seleksi pelamar yang cepat dan bisa dipertanggungjawabkan",
+    "judulSorot": "bisa dipertanggungjawabkan",
+    "untuk": ["toko", "restoran", "perusahaan yang rutin merekrut"],
+    "masalah": "HRD membaca puluhan sampai ratusan CV satu per satu. Penilaiannya berbeda-beda tergantung siapa yang membaca dan kapan.",
+    "solusi": "Setiap pelamar dinilai dengan aturan yang sama. HRD melihat alasan di balik setiap nilai, lalu tetap HRD yang memutuskan.",
+    "masalahPanjang": "Saat membuka lowongan kasir atau kepala toko, HRD menerima banyak CV dengan format berbeda-beda. Menyaringnya makan waktu, dan dua orang HRD bisa menilai pelamar yang sama secara berbeda. Pelamar yang ditolak pun tidak tahu alasannya.",
+    "demo": {
+      "url": "https://sistem-rekrutmen.vercel.app",
+      "akun": { "email": "hr@demo.rekrut.id", "password": "demo12345" },
+      "catatan": "Semua berjalan di browser Anda; data fiktif."
+    },
+    "repo": "https://github.com/AnggaNurSalimDev/sistem-rekrutmen",
+    "langkah": [
+      "Masuk sebagai HR, lalu buka lowongan Kepala Toko.",
+      "Urutkan pelamar menurut skor, lalu buka salah satunya untuk melihat alasan di balik setiap nilai.",
+      "Atau daftar sebagai pelamar, lamar satu lowongan, kerjakan tesnya, lalu lihat lamaranmu muncul di dashboard HR."
+    ],
+    "keputusan": [
+      {
+        "judul": "AI hanya membaca CV, tidak menilai",
+        "isi": "Nilai dihitung oleh aturan yang tertulis dan sama untuk semua pelamar. Setiap temuan AI wajib disertai kutipan yang benar-benar ada di CV. Kalau kutipannya tidak ada, temuan itu dibuang."
+      },
+      {
+        "judul": "Data yang kurang tidak dianggap nol",
+        "isi": "Pelamar yang belum mengerjakan tes tidak mendapat nilai 0, tetapi berstatus \"belum lengkap\". Fresh graduate tidak dihukum karena tidak punya riwayat kerja."
+      },
+      {
+        "judul": "Terima atau tolak hanya setelah HR memeriksa CV",
+        "isi": "Nilai dari data yang belum diperiksa selalu diberi label \"sementara\", supaya keputusan tidak diambil dari hasil baca otomatis saja."
+      }
+    ],
+    "gambar": {
+      "kartu": { "src": "/proyek/rekrut/kartu.webp", "alt": "Dashboard rekruter lowongan Kepala Toko: 19 pelamar, grafik sebaran skor, dan rata-rata nilai per komponen" },
+      "galeri": [
+        { "src": "/proyek/rekrut/dashboard.webp", "alt": "Dashboard lowongan Kepala Toko: peringatan 12 CV belum dicek HR, grafik sebaran skor, rata-rata nilai per komponen, dan tabel pelamar", "keterangan": "Satu lowongan, 19 pelamar. Skor yang belum dicek HR ditandai \"Sementara\"." },
+        { "src": "/proyek/rekrut/cek-cv.webp", "alt": "Pemeriksaan CV: skill dan riwayat kerja hasil baca, kotak pencarian kata kunci, dan teks CV dengan bagian yang disorot", "keterangan": "HR melihat dari bagian CV mana setiap temuan diambil, dan bisa mencari kata kunci sendiri seperti \"SIM A\"." }
+      ]
+    },
+    "belum": [
+      "Demo publik berjalan tanpa server, jadi pembacaan CV oleh AI disimulasikan: hasilnya diambil dari profil contoh dan diberi label jelas. Perhitungan skor tetap memakai kode yang sama dengan server.",
+      "Akurasi AI membaca CV asli belum diukur.",
+      "Belum ada pembatasan percobaan login."
+    ],
+    "teknis": {
+      "stack": ["React", "Node.js + Express", "PostgreSQL", "Claude API (parser CV)"],
+      "jumlahTest": 236,
+      "catatan": "99 unit test backend, 89 test endpoint ke PostgreSQL sungguhan, 48 test frontend, ditambah uji ujung ke ujung di browser."
+    },
+    "ajakan": "Kewalahan menyaring pelamar?",
+    "og": {
+      "judul": "Sistem Rekrutmen — Angga Nur Salim",
+      "deskripsi": "Pelamar dinilai dengan aturan yang sama, ada bukti dari CV, dan HRD tetap memutuskan."
+    }
+  }
+]
