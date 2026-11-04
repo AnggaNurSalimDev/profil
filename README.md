@@ -21,7 +21,7 @@ src/data/profil.json ─┼─ cek-data (zod + invariant) ── gagal → build
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm test           # 24 test: skema, invariant, tautan WhatsApp, sorotan judul
+npm test           # 25 test: skema, invariant, tautan WhatsApp, sorotan judul
 npm run build      # cek data → build → halaman statis
 ```
 
@@ -33,7 +33,7 @@ npm run build      # cek data → build → halaman statis
 4. `npm test && npm run build`. Halaman `/proyek/<id>` dan kartunya muncul sendiri.
 
 Aturan yang dicek (build gagal jika dilanggar): `id` unik dan huruf kecil/angka/tanda hubung, `urutan` unik,
-`masalah`/`solusi` 1–200 karakter, URL demo dan repo `https://`, `keputusan` 1–5, `judulSorot` harus bagian dari `judul`,
+`masalah`/`solusi` 1–200 karakter, `nota` maksimal 24 karakter, URL demo `https://`, `keputusan` 1–5, `judulSorot` harus bagian dari `judul`,
 setiap gambar ada di `public/` dan punya `alt`, field asing ditolak, nomor WhatsApp format `62…`.
 
 ## Deploy ke Vercel

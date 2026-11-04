@@ -33,7 +33,6 @@ export default function StudiKasus() {
           <h1><JudulSorot judul={p.judul} sorot={p.judulSorot} /></h1>
           <div className="baris-tombol">
             <a className="tombol tombol-isi" href={p.demo.url} target="_blank" rel="noopener noreferrer">Coba demo</a>
-            <a className="tombol tombol-garis" href={p.repo} target="_blank" rel="noopener noreferrer">Lihat kode</a>
           </div>
           <p className="catatan">
             Untuk {p.untuk.join(', ')}
@@ -68,23 +67,16 @@ export default function StudiKasus() {
 
         {gambarLain.map((g) => <Gambar key={g.src} g={g} lebar="lebar-sedang" />)}
 
-        <article className="kolom-baca kasus-akhir">
-          {p.belum.length > 0 && (
-            <>
-              <h2>Yang belum ada</h2>
-              <ul className="daftar-belum">
-                {p.belum.map((b) => <li key={b}>{b}</li>)}
-              </ul>
-            </>
-          )}
-          <details className="lipatan">
-            <summary>Untuk developer</summary>
-            <div>
-              <p>{p.teknis.stack.join(', ')}. <span className="mono">{p.teknis.jumlahTest} test</span>. {p.teknis.catatan}</p>
-              <a href={p.repo} target="_blank" rel="noopener noreferrer">{p.repo.replace('https://', '')}</a>
-            </div>
-          </details>
-        </article>
+        {p.belum.length > 0 ? (
+          <article className="kolom-baca kasus-akhir">
+            <h2>Yang belum ada</h2>
+            <ul className="daftar-belum">
+              {p.belum.map((b) => <li key={b}>{b}</li>)}
+            </ul>
+          </article>
+        ) : (
+          <div className="kasus-akhir" />
+        )}
 
         <PitaAjakan judul={p.ajakan} pesan={`Halo Angga, saya tertarik dengan ${p.nama}.`} />
       </main>

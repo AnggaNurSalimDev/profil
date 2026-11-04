@@ -41,11 +41,20 @@ describe('invariant proyek', () => {
     }
   });
 
-  it('menolak url demo/repo yang bukan https', () => {
+  it('menolak url demo yang bukan https', () => {
     const d1 = salin(); d1[0].demo.url = 'http://contoh.id';
     gagal(d1, 'https://');
-    const d2 = salin(); d2[0].repo = 'github.com/x';
+    const d2 = salin(); d2[0].demo.url = 'kasir.vercel.app';
     gagal(d2, 'https://');
+  });
+
+  it('nota: wajib, maksimal 24 karakter supaya muat satu baris', () => {
+    const kosong = salin(); kosong[0].nota = '';
+    gagal(kosong, 'Tidak boleh kosong');
+    const pas = salin(); pas[0].nota = 'a'.repeat(24);
+    expect(() => validasiProyek(pas)).not.toThrow();
+    const lebih = salin(); lebih[0].nota = 'a'.repeat(25);
+    gagal(lebih, 'Maksimal 24');
   });
 
   it('masalah dan solusi: kosong ditolak, 200 karakter boleh, 201 ditolak', () => {

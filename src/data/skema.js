@@ -17,6 +17,8 @@ export const skemaProyek = z
   .object({
     id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'id hanya huruf kecil, angka, dan tanda hubung'),
     nama: teks(60),
+    // Satu baris di nota beranda; harus dipahami pemilik usaha (bukan istilah teknis).
+    nota: teks(24),
     urutan: z.number().int().min(1),
     judul: teks(90),
     judulSorot: teks(60),
@@ -31,7 +33,6 @@ export const skemaProyek = z
         catatan: teks(160),
       })
       .strict(),
-    repo: urlHttps,
     langkah: z.array(teks(200)).min(1).max(5),
     keputusan: z
       .array(z.object({ judul: teks(90), isi: teks(500), catatan: teks(60).optional() }).strict())
@@ -44,9 +45,6 @@ export const skemaProyek = z
       })
       .strict(),
     belum: z.array(teks(300)).max(6),
-    teknis: z
-      .object({ stack: z.array(teks(40)).min(1), jumlahTest: z.number().int().min(0), catatan: teks(400) })
-      .strict(),
     ajakan: teks(80),
     og: z.object({ judul: teks(70), deskripsi: teks(160) }).strict(),
   })

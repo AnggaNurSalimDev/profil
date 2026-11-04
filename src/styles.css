@@ -29,7 +29,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; display: block; }
-h1, h2, h3 { margin: 0; }
+h1, h2, h3 { margin: 0; overflow-wrap: break-word; hyphens: auto; }
 p { margin: 0; }
 a { color: var(--tinta); }
 :focus-visible { outline: 3px solid var(--tautan); outline-offset: 2px; }
@@ -170,11 +170,6 @@ h2 {
 .keputusan h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; line-height: 1.35; }
 .kasus-akhir { padding-bottom: 72px; }
 .daftar-belum { margin: 0 0 40px; padding-left: 22px; color: var(--teks-redup); display: flex; flex-direction: column; gap: 8px; }
-.lipatan { border: 1px solid var(--garis); border-radius: 12px; background: var(--putih); padding: 0 20px; }
-.lipatan summary { cursor: pointer; padding: 16px 0; font-weight: 700; }
-.lipatan > div { padding-bottom: 18px; color: var(--teks-redup); font-size: 15.5px; }
-.lipatan p { margin-bottom: 10px; }
-.lipatan a { color: var(--tautan); word-break: break-all; }
 
 .tidak-ditemukan { padding-top: 96px; padding-bottom: 120px; }
 .tidak-ditemukan h1 { margin: 12px 0 16px; }

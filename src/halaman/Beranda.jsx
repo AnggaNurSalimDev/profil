@@ -20,10 +20,10 @@ function Nota() {
       <div className="nota-sub">{profil.nama} · {profil.kota}</div>
       <hr />
       {proyek.map((p) => (
-        <div className="nota-baris" key={p.id}><span>{p.nama}</span><span>{p.teknis.jumlahTest} test</span></div>
+        <div className="nota-baris" key={p.id}><span>{p.nama}</span><span>{p.nota}</span></div>
       ))}
       <div className="nota-baris"><span>Demo bisa dicoba</span><span>{proyek.length}</span></div>
-      <div className="nota-baris"><span>Data contoh</span><span>fiktif</span></div>
+      <div className="nota-baris"><span>Biaya mencoba</span><span>Rp 0</span></div>
       <hr />
       <div className="nota-baris nota-total"><span>DARI</span><span>masalah nyata</span></div>
       <div className="nota-sub nota-penutup">Terima kasih sudah mampir</div>
