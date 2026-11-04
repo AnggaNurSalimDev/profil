@@ -107,7 +107,7 @@ describe('invariant proyek', () => {
 
 describe('invariant profil', () => {
   it('nomor WhatsApp harus format 62…', () => {
-    for (const nomor of ['089504842581', '+6289504842581', '62 895', '62']) {
+    for (const nomor of ['089508482581', '+6289508482581', '62 895', '62']) {
       expect(() => validasiProfil({ ...dataProfil, whatsapp: nomor })).toThrow('WhatsApp');
     }
   });
@@ -130,12 +130,12 @@ describe('cariProyek', () => {
 
 describe('tautanWa', () => {
   it('menyandikan pesan', () => {
-    expect(tautanWa('6289504842581', 'Halo Angga, saya lihat web Anda.'))
-      .toBe('https://wa.me/6289504842581?text=Halo%20Angga%2C%20saya%20lihat%20web%20Anda.');
+    expect(tautanWa('6289508482581', 'Halo Angga, saya lihat web Anda.'))
+      .toBe('https://wa.me/6289508482581?text=Halo%20Angga%2C%20saya%20lihat%20web%20Anda.');
   });
-  it('tanpa pesan → tanpa ?text', () => expect(tautanWa('6289504842581')).toBe('https://wa.me/6289504842581'));
+  it('tanpa pesan → tanpa ?text', () => expect(tautanWa('6289508482581')).toBe('https://wa.me/6289508482581'));
   it('nomor salah format → error, bukan tautan rusak', () => {
-    expect(() => tautanWa('0895-0484-2581', 'x')).toThrow('tidak valid');
+    expect(() => tautanWa('0895-0848-2581', 'x')).toThrow('tidak valid');
   });
 });
 

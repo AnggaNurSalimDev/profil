@@ -6,12 +6,13 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { validasiProyek } from '../src/data/skema.js';
+import { validasiProyek, validasiProfil } from '../src/data/skema.js';
 import { META_BERANDA } from '../src/data/meta.js';
 
 const akar = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(akar, 'dist');
 const PENANDA = '<!--META-->';
+const PENANDA_WA = '<!--WA-->'; // nomor WhatsApp di <noscript>, diambil dari profil.json (satu sumber)
 
 // Alamat situs untuk og:image (harus absolut). Vercel mengisi VERCEL_PROJECT_PRODUCTION_URL saat build.
 function alamatSitus() {
@@ -49,6 +50,9 @@ try {
   if (!existsSync(pathIndex)) throw new Error('dist/index.html tidak ada. Jalankan vite build dulu.');
   const template = readFileSync(pathIndex, 'utf8');
   if (!template.includes(PENANDA)) throw new Error(`Penanda ${PENANDA} tidak ada di index.html.`);
+  if (!template.includes(PENANDA_WA)) throw new Error(`Penanda ${PENANDA_WA} tidak ada di index.html.`);
+  const profil = validasiProfil(JSON.parse(readFileSync(join(akar, 'src/data/profil.json'), 'utf8')));
+  const templateWa = template.replace(PENANDA_WA, `wa.me/${profil.whatsapp}`);
 
   const situs = alamatSitus();
   if (!situs) {
@@ -72,7 +76,7 @@ try {
       throw new Error(`Gambar pratinjau ${h.gambar} tidak ada. Jalankan npm run og-image.`);
     }
     mkdirSync(dirname(h.keluaran), { recursive: true });
-    writeFileSync(h.keluaran, template.replace(PENANDA, tagMeta(h, situs)));
+    writeFileSync(h.keluaran, templateWa.replace(PENANDA, tagMeta(h, situs)));
   }
   console.log(`Halaman statis: ${halaman.map((h) => h.path).join(', ')}${situs ? ` (situs ${situs})` : ''}`);
 } catch (e) {
