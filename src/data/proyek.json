@@ -15,7 +15,7 @@
     "solusi": "Crew cukup menekan menu. Stok setiap bahan berkurang sendiri sesuai resep, dan pemilik melihat selisih per shift.",
     "masalahPanjang": "Di kedai minuman, satu gelas Thai Tea memakai creamer dalam sendok, air teh dalam garis gelas, dan topping dalam gram. Pemilik tahu stok berkurang lebih cepat dari seharusnya, tapi tidak tahu penyebabnya: takaran yang boros, salah catat barang masuk, atau hilang. Satu orang menjual, mencatat, dan menghitung stok, jadi selisihnya tidak bisa dilacak ke siapa pun.",
     "demo": {
-      "url": "https://kasir-stok-otomatis-yr3j.vercel.app",
+      "url": "https://kasir-stok-otomatis.vercel.app",
       "akun": null,
       "catatan": "Data contoh tiga usaha fiktif. Masuk cukup dengan memilih nama."
     },
