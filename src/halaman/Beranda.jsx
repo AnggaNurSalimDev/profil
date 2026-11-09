@@ -87,23 +87,25 @@ export default function Beranda() {
           </div>
         </section>
 
-        <section id="kontak" className="pita-gelap">
-          <div className="wadah kontak">
-            <div className="kontak-teks">
-              <h2>Mencari usaha pertama untuk memakai sistem-sistem ini</h2>
-              <p>
-                Sistem-sistem di atas sudah bisa dicoba, tapi belum pernah dipakai di usaha sungguhan. Karena itu, usaha
-                pertama yang memakai salah satunya akan mendapatkannya gratis. Saya juga perlu melihat bagaimana sistem ini
-                bekerja di tempat yang sebenarnya.
-              </p>
-              <p>Kalau masalah di usaha Anda berbeda, ceritakan saja lewat WhatsApp. Saya buatkan demonya lebih dulu.</p>
-            </div>
-            <div className="kontak-aksi">
-              <TombolWa pesan={PESAN_WA} varian="stabilo" />
-              <div className="kontak-tautan">
-                <a href={`mailto:${profil.email}`}>{profil.email}</a>
-                {profil.linkedin && <a href={profil.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
-                <a href={profil.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        <section id="kontak" className="bagian-kontak">
+          <div className="wadah">
+            <div className="pita-gelap kontak">
+              <div className="kontak-teks">
+                <h2>Mencari usaha pertama untuk memakai <span className="tanpa-putus">sistem-sistem</span> ini</h2>
+                <p>
+                  Sistem-sistem di atas sudah bisa dicoba, tapi belum pernah dipakai di usaha sungguhan. Karena itu, usaha
+                  pertama yang memakai salah satunya akan mendapatkannya gratis. Saya juga perlu melihat bagaimana sistem ini
+                  bekerja di tempat yang sebenarnya.
+                </p>
+                <p>Kalau masalah di usaha Anda berbeda, ceritakan saja lewat WhatsApp. Saya buatkan demonya lebih dulu.</p>
+              </div>
+              <div className="kontak-aksi">
+                <TombolWa pesan={PESAN_WA} varian="stabilo" />
+                <div className="kontak-tautan">
+                  <a href={`mailto:${profil.email}`}>{profil.email}</a>
+                  {profil.linkedin && <a href={profil.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
+                  <a href={profil.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
               </div>
             </div>
           </div>

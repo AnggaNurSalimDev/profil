@@ -138,6 +138,12 @@ h2 {
 .pita-gelap a { color: var(--gelap-teks); }
 .pita-gelap .tombol-stabilo { color: var(--tinta); }
 .kontak { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end; justify-content: space-between; padding-top: 80px; padding-bottom: 80px; }
+.bagian-kontak { padding-top: 72px; padding-bottom: 72px; border-top: 1px solid var(--garis); }
+.bagian-kontak .kontak { align-items: center; border-radius: 20px; padding: 56px; }
+.bagian-kontak .kontak-teks { max-width: 640px; }
+.bagian-kontak .kontak-teks h2 { font-size: clamp(28px, 3.6vw, 40px); }
+.tanpa-putus { white-space: nowrap; }
+@media (max-width: 640px) { .bagian-kontak .kontak { padding: 32px 24px; } }
 .kontak-teks { flex: 1 1 420px; min-width: 0; }
 .kontak-teks h2 { font-size: clamp(30px, 4.5vw, 48px); line-height: 1.1; margin-bottom: 12px; }
 .kontak-teks p { font-size: 19px; color: var(--gelap-redup); }
@@ -149,7 +155,9 @@ h2 {
 .pita-ajakan h2 { flex: 1 1 420px; font-size: clamp(26px, 4vw, 38px); }
 
 .kaki { background: var(--tinta); color: #A9AEB8; font-size: 13.5px; }
-.kaki .wadah { border-top: 1px solid #333A48; padding-top: 20px; padding-bottom: 28px; }
+.kaki .wadah { padding-top: 24px; padding-bottom: 28px; }
+/* Garis pembatas hanya saat footer menempel ke pita gelap (halaman proyek). */
+main:has(> .pita-gelap:last-child) + .kaki .wadah { border-top: 1px solid #333A48; padding-top: 20px; }
 
 /* Studi kasus */
 .kolom-baca h2 { font-size: 28px; margin: 56px 0 16px; }
