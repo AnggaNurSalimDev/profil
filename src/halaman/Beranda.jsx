@@ -87,26 +87,6 @@ export default function Beranda() {
           </div>
         </section>
 
-        <section id="tentang" className="bagian-putih">
-          <div className="wadah bagian tentang">
-            <img className="foto" src={profil.foto.src} alt={profil.foto.alt} width="672" height="840" loading="lazy" decoding="async" />
-            <div className="tentang-teks">
-              <p className="label">TENTANG SAYA</p>
-              <h2>{profil.nama}, developer web di {profil.kota}</h2>
-              <p className="redup">
-                Sebelum membuat web, saya bekerja di lapangan, dan sekarang menjalankan warung sendiri.
-              </p>
-              <p className="redup">
-                Karena itu saya membuat sistem yang mudah dipakai oleh orang yang menjalankannya setiap hari, seperti kasir,
-                crew, dan staf HR.
-              </p>
-              <ul className="pil-daftar" aria-label="Pengalaman kerja">
-                {RIWAYAT_KERJA.map((r) => <li key={r}>{r}</li>)}
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <section id="kontak" className="pita-gelap">
           <div className="wadah kontak">
             <div className="kontak-teks">
@@ -124,6 +104,26 @@ export default function Beranda() {
                 {profil.linkedin && <a href={profil.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
                 <a href={profil.github} target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="tentang" className="bagian-putih">
+          <div className="wadah bagian tentang">
+            <img className="foto" src={profil.foto.src} alt={profil.foto.alt} width="672" height="840" loading="lazy" decoding="async" />
+            <div className="tentang-teks">
+              <p className="label">TENTANG SAYA</p>
+              <h2>{profil.nama}, developer web di {profil.kota}</h2>
+              <p className="redup">
+                Sebelum membuat web, saya bekerja di lapangan, dan sekarang menjalankan warung sendiri.
+              </p>
+              <p className="redup">
+                Karena itu saya membuat sistem yang mudah dipakai oleh orang yang menjalankannya setiap hari, seperti kasir,
+                crew, dan staf HR.
+              </p>
+              <ul className="pil-daftar" aria-label="Pengalaman kerja">
+                {RIWAYAT_KERJA.map((r) => <li key={r}>{r}</li>)}
+              </ul>
             </div>
           </div>
         </section>

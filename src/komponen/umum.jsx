@@ -54,8 +54,8 @@ export function Kepala({ diBeranda }) {
         {diBeranda ? (
           <div className="menu">
             <a href="#proyek">Proyek</a>
-            <a href="#tentang">Tentang</a>
             <a href="#kontak">Kontak</a>
+            <a href="#tentang">Tentang</a>
           </div>
         ) : (
           <Link to="/#proyek" className="menu-kembali">← Semua proyek</Link>
