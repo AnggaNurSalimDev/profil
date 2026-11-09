@@ -35,8 +35,7 @@
       },
       {
         "judul": "Shift yang lupa ditutup tetap tercatat \"tidak ditutup\"",
-        "isi": "Crew berikutnya membuka shift baru tanpa menutup shift orang lain, jadi namanya tidak tercatat sebagai penutup shift yang tidak ia kerjakan. Versi sebelumnya membuat crew berikutnya hampir pasti menutup shift orang lain tanpa sengaja.",
-        "catatan": "Ditemukan saat meninjau desain"
+        "isi": "Crew berikutnya membuka shift baru tanpa menutup shift orang lain, jadi namanya tidak tercatat sebagai penutup shift yang tidak ia kerjakan."
       }
     ],
     "gambar": {
@@ -129,7 +128,7 @@
       ]
     },
     "belum": [
-      "Demo publik berjalan tanpa server, jadi pembacaan CV oleh AI disimulasikan: hasilnya diambil dari profil contoh dan diberi label jelas. Perhitungan skor tetap memakai kode yang sama dengan server.",
+      "Di demo ini, pembacaan CV oleh AI hanya disimulasikan: hasilnya diambil dari profil contoh dan diberi label jelas. Cara menghitung nilainya sama dengan versi aslinya.",
       "Akurasi AI membaca CV asli belum diukur.",
       "Belum ada pembatasan percobaan login."
     ],
@@ -160,7 +159,7 @@
       "catatan": "Data fiktif, hanya tersimpan di browser Anda. Tanpa login: ganti peran lewat “Lihat sebagai”."
     },
     "langkah": [
-      "Pilih skenario “Hari normal”, tekan ABSEN MASUK, lalu buka “Lihat cara kerja” untuk melihat pemeriksaan yang dilakukan server.",
+      "Pilih skenario “Hari normal”, tekan ABSEN MASUK, lalu buka “Lihat cara kerja” untuk melihat apa saja yang dicek sistem.",
       "Pilih “Coba curang”: absen dari luar toko dengan kode tebakan, dan lihat sistem menolaknya.",
       "Pilih “Akhir bulan”: Staf HR mengajukan gaji, Kepala HR memfinalkan, lalu slip muncul di HP pegawai."
     ],
@@ -174,8 +173,8 @@
         "isi": "Lupa absen pulang diperbaiki lewat pengajuan koreksi yang disetujui HR. Sistem menambah baris baru bertanda KOREKSI dan baris lama tetap ada, jadi selalu terlihat apa yang sebenarnya terjadi."
       },
       {
-        "judul": "Aturan gaji diatur HR, bukan ditanam di program",
-        "isi": "Komponen seperti uang makan atau potongan BPJS dibuat HR per jabatan dan disimpan sebagai versi baru dengan tanggal berlaku. Saat peraturan berubah, program tidak perlu diubah, dan slip yang sudah final tidak ikut berubah."
+        "judul": "Aturan gaji diatur HR sendiri",
+        "isi": "Komponen seperti uang makan atau potongan BPJS dibuat HR per jabatan, dengan tanggal mulai berlaku. Saat peraturan berubah, HR cukup mengubah aturannya. Slip yang sudah final tidak ikut berubah."
       },
       {
         "judul": "Gaji tidak bisa diterbitkan oleh satu orang",
@@ -191,7 +190,7 @@
         {
           "src": "/proyek/hadirku/tolak-kode.webp",
           "alt": "Absen dari luar toko: WiFi kantor tidak terdeteksi, kode tebakan 123456 ditolak, dan panel server menunjukkan pemeriksaan IP dan kode yang gagal",
-          "keterangan": "Mencoba absen dari rumah dengan kode tebakan. Server menolak, dan alasannya terlihat satu per satu."
+          "keterangan": "Mencoba absen dari rumah dengan kode tebakan. Sistem menolak, dan alasannya terlihat satu per satu."
         },
         {
           "src": "/proyek/hadirku/penggajian.webp",
@@ -202,9 +201,9 @@
     },
     "belum": [
       "Belum diuji di tempat kerja sungguhan. Yang paling perlu dicek dulu: apakah alamat IP WiFi toko stabil.",
-      "Demo berjalan sepenuhnya di browser: WiFi kantor disimulasikan dengan saklar dan data hanya tersimpan di browser Anda. Server dan database baru ada di rancangan.",
+      "Demo berjalan sepenuhnya di browser: WiFi kantor disimulasikan dengan saklar, dan data hanya tersimpan di browser Anda.",
       "Angka BPJS dan pajak di demo hanya contoh, bukan tarif resmi.",
-      "Rumus gaji bersyarat belum dibuat; strukturnya sudah disiapkan."
+      "Aturan gaji bersyarat, misalnya bonus jika tidak pernah telat, belum bisa dibuat."
     ],
     "ajakan": "Masih ada titip absen di usaha Anda?",
     "og": {
