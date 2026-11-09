@@ -141,7 +141,7 @@
   },
   {
     "id": "hadirku",
-    "nama": "Hadirku — Absensi & Gaji",
+    "nama": "Absensi & Gaji",
     "nota": "8 pegawai contoh",
     "urutan": 3,
     "judul": "Absen yang tidak bisa dititipkan, gaji yang terhitung sendiri",
@@ -208,7 +208,7 @@
     ],
     "ajakan": "Masih ada titip absen di usaha Anda?",
     "og": {
-      "judul": "Hadirku: Absensi & Gaji — Angga Nur Salim",
+      "judul": "Absensi & Gaji (Hadirku) — Angga Nur Salim",
       "deskripsi": "Absen satu ketukan yang tidak bisa dititipkan atau dilakukan dari rumah; gaji dan slip terhitung dari aturan yang HR atur sendiri."
     }
   }

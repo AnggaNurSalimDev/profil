@@ -7,9 +7,9 @@ const PESAN_WA = 'Halo Angga, saya lihat web portofolio Anda.';
 const RIWAYAT_KERJA = ['Groomer pet shop', 'Teknisi poles mobil', 'Crew restoran', 'Pemilik warung'];
 
 const CARA_KERJA = [
-  ['Mulai dari masalah, bukan dari fitur', 'Saya tanya dulu apa yang sering salah di usaha Anda, baru menentukan apa yang perlu dibuat.'],
+  ['Mulai dari masalah, bukan dari fitur', 'Saya pelajari dulu alur kerja Anda dan di titik mana ia sering salah, baru menentukan apa yang perlu dibuat.'],
   ['Anda bisa mencoba sebelum memutuskan', 'Setiap aturan sudah punya pilihan bawaan yang bisa langsung dicoba di demo. Anda cukup bilang mana yang tidak cocok.'],
-  ['Diuji seperti dipakai sungguhan', 'Data berbulan-bulan, salah input, shift yang lupa ditutup, dan CV yang berantakan, bukan hanya kasus yang lancar.'],
+  ['Diuji seperti dipakai sungguhan', 'Data berbulan-bulan, salah input, proses yang terhenti di tengah jalan, dan data yang berantakan, bukan hanya kasus yang lancar.'],
 ];
 
 function Nota() {
@@ -68,10 +68,11 @@ export default function Beranda() {
         <section id="atas" className="wadah hero">
           <div className="hero-teks">
             <p className="label">DEVELOPER WEB · {profil.kota.toUpperCase()}</p>
-            <h1>Web untuk <Sorot>masalah sehari-hari</Sorot> di usaha Anda</h1>
+            <h1>Menerjemahkan <Sorot>masalah bisnis</Sorot> menjadi sistem web</h1>
             <p className="hero-lead">
-              Saya Angga, developer web di {profil.kota}. Saya membuat sistem yang mengurus pekerjaan yang sering salah
-              kalau dikerjakan manual: menghitung stok bahan, menyaring pelamar kerja, dan mencatat siapa mengerjakan apa.
+              Saya Angga, developer web di {profil.kota}. Saya mengubah aturan dan alur kerja di bisnis Anda (siapa boleh
+              melakukan apa, kapan, dan bagaimana menghitungnya) menjadi sistem web yang menjalankannya dengan konsisten
+              dan meninggalkan jejak yang bisa diperiksa.
             </p>
             <div className="baris-tombol">
               <a className="tombol tombol-isi" href="#proyek">Lihat proyek</a>
@@ -84,7 +85,7 @@ export default function Beranda() {
         <section id="proyek" className="bagian-putih">
           <div className="wadah bagian">
             <p className="label">PROYEK</p>
-            <h2>Dua masalah, dua web yang bisa langsung dicoba</h2>
+            <h2>Masalah nyata, sistem yang bisa langsung dicoba</h2>
             <div className="grid-kartu">
               {proyek.map((p) => <KartuProyek key={p.id} p={p} />)}
             </div>
@@ -110,17 +111,17 @@ export default function Beranda() {
             <img className="foto" src={profil.foto.src} alt={profil.foto.alt} width="672" height="840" loading="lazy" decoding="async" />
             <div className="tentang-teks">
               <p className="label">TENTANG SAYA</p>
-              <h2>Pernah di balik meja kasir, sekarang membuat kasirnya</h2>
+              <h2>Pernah menjalankan prosesnya, sekarang merancang sistemnya</h2>
               <p className="redup">
                 Saya {profil.nama}, developer web otodidak di {profil.kota}, lulusan SMK jurusan Teknik Bisnis Sepeda Motor (2021).
               </p>
               <p className="redup">
-                Sebelum membuat web, saya bekerja di lapangan, dan saya juga menjalankan warung. Dari situ saya tahu rasanya
-                menghitung stok di akhir shift, menjaga toko sambil melayani pelanggan, dan bekerja dengan sistem yang tidak membantu.
+                Sebelum membuat web, saya bekerja di lapangan dan menjalankan warung sendiri. Dari situ saya melihat langsung
+                jarak antara aturan di atas kertas dan yang benar-benar terjadi saat pekerjaan sedang ramai.
               </p>
               <p className="redup">
-                Proyek-proyek di sini lahir dari pengalaman itu. Saya bekerja dengan React dan JavaScript, dan merancang sistem
-                dari aturan bisnisnya dulu.
+                Itu yang saya bawa ke setiap proyek: memahami aturan bisnisnya dulu, lalu menerjemahkannya menjadi sistem.
+                Saya bekerja dengan React dan JavaScript.
               </p>
               <ul className="pil-daftar" aria-label="Pengalaman kerja">
                 {RIWAYAT_KERJA.map((r) => <li key={r}>{r}</li>)}
@@ -132,8 +133,8 @@ export default function Beranda() {
         <section id="kontak" className="pita-gelap">
           <div className="wadah kontak">
             <div className="kontak-teks">
-              <h2>Punya masalah serupa di usaha Anda?</h2>
-              <p>Ceritakan saja dulu, tidak harus sudah tahu mau dibuatkan apa.</p>
+              <h2>Ada proses di bisnis Anda yang masih sering salah?</h2>
+              <p>Ceritakan masalahnya dulu, tidak harus sudah tahu mau dibuatkan apa.</p>
             </div>
             <div className="kontak-aksi">
               <TombolWa pesan={PESAN_WA} varian="stabilo" />
