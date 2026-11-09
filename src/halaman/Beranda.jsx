@@ -104,7 +104,6 @@ export default function Beranda() {
                 <div className="kontak-tautan">
                   <a href={`mailto:${profil.email}`}>{profil.email}</a>
                   {profil.linkedin && <a href={profil.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
-                  <a href={profil.github} target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </div>
