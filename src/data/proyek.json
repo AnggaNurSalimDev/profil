@@ -138,5 +138,78 @@
       "judul": "Sistem Rekrutmen — Angga Nur Salim",
       "deskripsi": "Pelamar dinilai dengan aturan yang sama, ada bukti dari CV, dan HRD tetap memutuskan."
     }
+  },
+  {
+    "id": "hadirku",
+    "nama": "Hadirku — Absensi & Gaji",
+    "nota": "8 pegawai contoh",
+    "urutan": 3,
+    "judul": "Absen yang tidak bisa dititipkan, gaji yang terhitung sendiri",
+    "judulSorot": "tidak bisa dititipkan",
+    "untuk": [
+      "toko",
+      "restoran",
+      "usaha dengan shift"
+    ],
+    "masalah": "Pegawai bisa titip absen atau absen sebelum sampai di tempat kerja. Di akhir bulan, HR menghitung gaji, lembur, dan potongan manual dari catatan yang tidak sepenuhnya bisa dipercaya.",
+    "solusi": "Pegawai absen satu ketukan dari HP, tapi hanya diterima dari WiFi toko atau dengan kode dari HP di lokasi. Gaji dan slip dihitung dari absen dan aturan yang HR atur sendiri.",
+    "masalahPanjang": "Di toko atau restoran dengan shift, absen biasanya ditulis di buku atau lewat grup chat. Pegawai yang terlambat bisa menitip absen ke teman, dan tidak ada yang tahu siapa yang sebenarnya sudah di lokasi. Di akhir bulan HR menjumlahkan kehadiran, telat, dan lembur satu per satu, lalu menghitung potongan seperti BPJS yang aturannya bisa berubah. Kesalahan kecil di catatan langsung jadi selisih di gaji, dan pegawai tidak punya slip yang menjelaskan dari mana angkanya.",
+    "demo": {
+      "url": "https://hadirku-demo.vercel.app",
+      "akun": null,
+      "catatan": "Data fiktif, hanya tersimpan di browser Anda. Tanpa login: ganti peran lewat “Lihat sebagai”."
+    },
+    "langkah": [
+      "Pilih skenario “Hari normal”, tekan ABSEN MASUK, lalu buka “Lihat cara kerja” untuk melihat pemeriksaan yang dilakukan server.",
+      "Pilih “Coba curang”: absen dari luar toko dengan kode tebakan, dan lihat sistem menolaknya.",
+      "Pilih “Akhir bulan”: Staf HR mengajukan gaji, Kepala HR memfinalkan, lalu slip muncul di HP pegawai."
+    ],
+    "keputusan": [
+      {
+        "judul": "Kode cadangan hanya tampil di HP yang dipasang di lokasi",
+        "isi": "Kalau WiFi toko mati, pegawai memasukkan kode dari HP lokasi. Kode berganti tiap 30 detik, kode lama ditolak, dan setelah 5 kali salah percobaan diblokir. Absen dari rumah atau menebak kode jadi tidak ada gunanya."
+      },
+      {
+        "judul": "Absen yang sudah tercatat tidak pernah diubah",
+        "isi": "Lupa absen pulang diperbaiki lewat pengajuan koreksi yang disetujui HR. Sistem menambah baris baru bertanda KOREKSI dan baris lama tetap ada, jadi selalu terlihat apa yang sebenarnya terjadi."
+      },
+      {
+        "judul": "Aturan gaji diatur HR, bukan ditanam di program",
+        "isi": "Komponen seperti uang makan atau potongan BPJS dibuat HR per jabatan dan disimpan sebagai versi baru dengan tanggal berlaku. Saat peraturan berubah, program tidak perlu diubah, dan slip yang sudah final tidak ikut berubah."
+      },
+      {
+        "judul": "Gaji tidak bisa diterbitkan oleh satu orang",
+        "isi": "Staf HR menyiapkan dan mengajukan, Kepala HR memeriksa lalu memfinalkan. Slip baru terbit setelah final, dan setelah itu angkanya beku."
+      }
+    ],
+    "gambar": {
+      "kartu": {
+        "src": "/proyek/hadirku/kartu.webp",
+        "alt": "HP pegawai Budi berstatus sedang bekerja setelah absen masuk lewat WiFi kantor, di sebelah HP lokasi dengan kode dan QR, serta daftar pemeriksaan server yang semuanya lolos"
+      },
+      "galeri": [
+        {
+          "src": "/proyek/hadirku/tolak-kode.webp",
+          "alt": "Absen dari luar toko: WiFi kantor tidak terdeteksi, kode tebakan 123456 ditolak, dan panel server menunjukkan pemeriksaan IP dan kode yang gagal",
+          "keterangan": "Mencoba absen dari rumah dengan kode tebakan. Server menolak, dan alasannya terlihat satu per satu."
+        },
+        {
+          "src": "/proyek/hadirku/penggajian.webp",
+          "alt": "Laptop Staf HR, halaman Penggajian Oktober 2026: tabel 8 pegawai berisi hadir, telat, lembur, bruto, potongan, dan take-home, dengan tombol Ajukan ke Kepala HR",
+          "keterangan": "Gaji sebulan langsung terhitung dari absen. Staf HR mengajukan, Kepala HR yang memfinalkan."
+        }
+      ]
+    },
+    "belum": [
+      "Belum diuji di tempat kerja sungguhan. Yang paling perlu dicek dulu: apakah alamat IP WiFi toko stabil.",
+      "Demo berjalan sepenuhnya di browser: WiFi kantor disimulasikan dengan saklar dan data hanya tersimpan di browser Anda. Server dan database baru ada di rancangan.",
+      "Angka BPJS dan pajak di demo hanya contoh, bukan tarif resmi.",
+      "Rumus gaji bersyarat belum dibuat; strukturnya sudah disiapkan."
+    ],
+    "ajakan": "Masih ada titip absen di usaha Anda?",
+    "og": {
+      "judul": "Hadirku: Absensi & Gaji — Angga Nur Salim",
+      "deskripsi": "Absen satu ketukan yang tidak bisa dititipkan atau dilakukan dari rumah; gaji dan slip terhitung dari aturan yang HR atur sendiri."
+    }
   }
 ]
