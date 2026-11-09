@@ -90,12 +90,13 @@ export default function Beranda() {
         <section id="kontak" className="pita-gelap">
           <div className="wadah kontak">
             <div className="kontak-teks">
-              <h2>Ada proses di bisnis Anda yang masih sering salah?</h2>
-              <p>Ceritakan lewat WhatsApp, dan saya buatkan demo dengan alur kerja usaha Anda.</p>
+              <h2>Mencari usaha pertama untuk memakai sistem-sistem ini</h2>
               <p>
-                Ketiga sistem di atas juga sedang mencari usaha pertama yang mau memakainya sungguhan. Usaha itu mendapat
-                sistemnya gratis, dan saya mendapat pelajaran dari masalah yang muncul selama dipakai.
+                Sistem-sistem di atas sudah bisa dicoba, tapi belum pernah dipakai di usaha sungguhan. Karena itu, usaha
+                pertama yang memakai salah satunya akan mendapatkannya gratis. Saya juga perlu melihat bagaimana sistem ini
+                bekerja di tempat yang sebenarnya.
               </p>
+              <p>Kalau masalah di usaha Anda berbeda, ceritakan saja lewat WhatsApp. Saya buatkan demonya lebih dulu.</p>
             </div>
             <div className="kontak-aksi">
               <TombolWa pesan={PESAN_WA} varian="stabilo" />
