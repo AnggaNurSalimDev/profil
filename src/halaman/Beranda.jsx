@@ -6,10 +6,10 @@ const PESAN_WA = 'Halo Angga, saya lihat web portofolio Anda.';
 
 const RIWAYAT_KERJA = ['Groomer pet shop', 'Teknisi poles mobil', 'Crew restoran', 'Pemilik warung'];
 
-const YANG_DIDAPAT = [
-  ['Dicoba dulu sebelum dipakai', 'Sebelum sistem dipakai di bisnis Anda, ada versi demo yang bisa Anda coba sendiri. Contoh-contoh di atas bisa dibuka sekarang tanpa mendaftar.'],
-  ['Catatan tidak bisa diubah diam-diam', 'Kalau ada yang salah dicatat, perbaikannya disimpan sebagai catatan baru. Catatan lama tetap ada, jadi Anda bisa melihat apa yang sebenarnya terjadi.'],
-  ['Aturan bisa diatur sendiri', 'Hal yang sering berubah, seperti komponen gaji, diatur dari layar admin. Anda tidak perlu menunggu programnya diubah.'],
+const LANGKAH_KERJA = [
+  ['Ceritakan masalahnya lewat WhatsApp', 'Saya akan bertanya bagaimana pekerjaan itu berjalan sekarang dan di bagian mana sering salah. Anda tidak perlu tahu istilah teknis.'],
+  ['Saya buatkan demo untuk usaha Anda', 'Demo memakai alur kerja dan aturan usaha Anda sendiri, jadi Anda bisa mencobanya sebelum memutuskan apa pun.'],
+  ['Lanjut kalau cocok', 'Untuk klien-klien pertama, demo ini gratis. Kalau Anda ingin melanjutkannya menjadi sistem yang dipakai sehari-hari, pengerjaan dimulai dengan uang muka.'],
 ];
 
 function Nota() {
@@ -93,10 +93,10 @@ export default function Beranda() {
         </section>
 
         <section className="wadah bagian">
-          <p className="label">YANG ANDA DAPAT</p>
-          <h2>Yang bisa Anda harapkan</h2>
+          <p className="label">LANGKAHNYA</p>
+          <h2>Kalau Anda menghubungi saya</h2>
           <ol className="grid-cara">
-            {YANG_DIDAPAT.map(([judul, isi], i) => (
+            {LANGKAH_KERJA.map(([judul, isi], i) => (
               <li key={judul}>
                 <p className="label">{String(i + 1).padStart(2, '0')}</p>
                 <h3>{judul}</h3>
