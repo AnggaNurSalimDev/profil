@@ -6,11 +6,6 @@ const PESAN_WA = 'Halo Angga, saya lihat web portofolio Anda.';
 
 const RIWAYAT_KERJA = ['Groomer pet shop', 'Teknisi poles mobil', 'Crew restoran', 'Pemilik warung'];
 
-const LANGKAH_KERJA = [
-  ['Ceritakan masalahnya lewat WhatsApp', 'Saya akan bertanya bagaimana pekerjaan itu berjalan sekarang dan di bagian mana sering salah. Anda tidak perlu tahu istilah teknis.'],
-  ['Saya buatkan demo untuk usaha Anda', 'Demo memakai alur kerja dan aturan usaha Anda sendiri, jadi Anda bisa mencobanya sebelum memutuskan apa pun.'],
-  ['Lanjut kalau cocok', 'Untuk klien-klien pertama, demo ini gratis. Kalau Anda ingin melanjutkannya menjadi sistem yang dipakai sehari-hari, pengerjaan dimulai dengan uang muka.'],
-];
 
 function Nota() {
   // Angka diambil dari data proyek, jadi nota ikut berubah saat proyek ditambah.
@@ -92,20 +87,6 @@ export default function Beranda() {
           </div>
         </section>
 
-        <section className="wadah bagian">
-          <p className="label">LANGKAHNYA</p>
-          <h2>Kalau Anda menghubungi saya</h2>
-          <ol className="grid-cara">
-            {LANGKAH_KERJA.map(([judul, isi], i) => (
-              <li key={judul}>
-                <p className="label">{String(i + 1).padStart(2, '0')}</p>
-                <h3>{judul}</h3>
-                <p className="redup">{isi}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-
         <section id="tentang" className="bagian-putih">
           <div className="wadah bagian tentang">
             <img className="foto" src={profil.foto.src} alt={profil.foto.alt} width="672" height="840" loading="lazy" decoding="async" />
@@ -130,7 +111,11 @@ export default function Beranda() {
           <div className="wadah kontak">
             <div className="kontak-teks">
               <h2>Ada proses di bisnis Anda yang masih sering salah?</h2>
-              <p>Ceritakan masalahnya dulu, tidak harus sudah tahu mau dibuatkan apa.</p>
+              <p>Ceritakan lewat WhatsApp, dan saya buatkan demo dengan alur kerja usaha Anda.</p>
+              <p>
+                Ketiga sistem di atas juga sedang mencari usaha pertama yang mau memakainya sungguhan. Usaha itu mendapat
+                sistemnya gratis, dan saya mendapat pelajaran dari masalah yang muncul selama dipakai.
+              </p>
             </div>
             <div className="kontak-aksi">
               <TombolWa pesan={PESAN_WA} varian="stabilo" />

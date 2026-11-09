@@ -141,6 +141,7 @@ h2 {
 .kontak-teks { flex: 1 1 420px; min-width: 0; }
 .kontak-teks h2 { font-size: clamp(30px, 4.5vw, 48px); line-height: 1.1; margin-bottom: 12px; }
 .kontak-teks p { font-size: 19px; color: var(--gelap-redup); }
+.kontak-teks p + p { margin-top: 12px; }
 .kontak-aksi { display: flex; flex-direction: column; gap: 14px; }
 .kontak-tautan { display: flex; flex-wrap: wrap; gap: 18px; font-size: 15px; }
 .kontak-tautan a { padding: 8px 0; }
