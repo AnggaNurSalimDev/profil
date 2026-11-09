@@ -21,7 +21,7 @@ export default function StudiKasus() {
   // Guard: id di alamat tidak dikenal → halaman "tidak ditemukan", bukan layar kosong.
   if (!p) return <TidakDitemukan pesan="Proyek ini tidak ada. Mungkin alamatnya salah ketik." />;
 
-  // Gambar galeri pertama setelah "Masalahnya", sisanya setelah "3 keputusan penting".
+  // Gambar galeri pertama setelah "Masalahnya", sisanya setelah "Yang dijaga oleh sistem ini".
   const [gambarPertama, ...gambarLain] = p.gambar.galeri;
 
   return (
@@ -29,7 +29,7 @@ export default function StudiKasus() {
       <Kepala />
       <main>
         <article className="kolom-baca kasus-awal">
-          <p className="label">STUDI KASUS · {p.nama.toUpperCase()}</p>
+          <p className="label">PROYEK · {p.nama.toUpperCase()}</p>
           <h1><JudulSorot judul={p.judul} sorot={p.judulSorot} /></h1>
           <div className="baris-tombol">
             <a className="tombol tombol-isi" href={p.demo.url} target="_blank" rel="noopener noreferrer">Coba demo</a>
@@ -53,11 +53,11 @@ export default function StudiKasus() {
             ))}
           </ol>
 
-          <h2>{p.keputusan.length} keputusan penting</h2>
+          <h2>Yang dijaga oleh sistem ini</h2>
           <div className="daftar-keputusan">
             {p.keputusan.map((k, i) => (
               <div key={k.judul} className="keputusan">
-                <p className="label">KEPUTUSAN {i + 1}{k.catatan && ` · ${k.catatan.toUpperCase()}`}</p>
+                <p className="label">{String(i + 1).padStart(2, '0')}</p>
                 <h3>{k.judul}</h3>
                 <p className="redup">{k.isi}</p>
               </div>

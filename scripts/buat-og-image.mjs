@@ -46,7 +46,7 @@ h1{margin:0;font-family:Judul;font-weight:700;font-size:76px;line-height:1.06;le
 }
 
 const halaman = [
-  { file: 'beranda', label: `DEVELOPER WEB · ${profil.kota.toUpperCase()}`, judul: 'Web untuk masalah sehari-hari di usaha Anda', sorot: 'masalah sehari-hari', bawah: 'Coba demonya langsung' },
+  { file: 'beranda', label: `DEVELOPER WEB · ${profil.kota.toUpperCase()}`, judul: 'Sistem web yang dibuat dari cara kerja bisnis Anda', sorot: 'cara kerja bisnis Anda', bawah: 'Coba demonya langsung' },
   ...proyek.map((p) => ({ file: p.id, label: `STUDI KASUS · ${p.nama.toUpperCase()}`, judul: p.judul, sorot: p.judulSorot, bawah: 'Demo bisa langsung dicoba' })),
 ];
 

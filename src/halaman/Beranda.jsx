@@ -6,11 +6,6 @@ const PESAN_WA = 'Halo Angga, saya lihat web portofolio Anda.';
 
 const RIWAYAT_KERJA = ['Groomer pet shop', 'Teknisi poles mobil', 'Crew restoran', 'Pemilik warung'];
 
-const CARA_KERJA = [
-  ['Mulai dari masalah, bukan dari fitur', 'Saya tanya dulu apa yang sering salah di usaha Anda, baru menentukan apa yang perlu dibuat.'],
-  ['Anda bisa mencoba sebelum memutuskan', 'Setiap aturan sudah punya pilihan bawaan yang bisa langsung dicoba di demo. Anda cukup bilang mana yang tidak cocok.'],
-  ['Diuji seperti dipakai sungguhan', 'Data berbulan-bulan, salah input, shift yang lupa ditutup, dan CV yang berantakan, bukan hanya kasus yang lancar.'],
-];
 
 function Nota() {
   // Angka diambil dari data proyek, jadi nota ikut berubah saat proyek ditambah.
@@ -68,10 +63,11 @@ export default function Beranda() {
         <section id="atas" className="wadah hero">
           <div className="hero-teks">
             <p className="label">DEVELOPER WEB · {profil.kota.toUpperCase()}</p>
-            <h1>Web untuk <Sorot>masalah sehari-hari</Sorot> di usaha Anda</h1>
+            <h1>Sistem web yang dibuat dari <Sorot>cara kerja bisnis Anda</Sorot></h1>
             <p className="hero-lead">
-              Saya Angga, developer web di {profil.kota}. Saya membuat sistem yang mengurus pekerjaan yang sering salah
-              kalau dikerjakan manual: menghitung stok bahan, menyaring pelamar kerja, dan mencatat siapa mengerjakan apa.
+              Stok yang selisih, absen yang dititipkan, pelamar yang dinilai berbeda-beda. Masalah seperti ini sering muncul
+              saat aturan kerja hanya ada di kepala atau di kertas. Sistem web menjalankan aturan itu setiap hari dan mencatat
+              siapa melakukan apa.
             </p>
             <div className="baris-tombol">
               <a className="tombol tombol-isi" href="#proyek">Lihat proyek</a>
@@ -84,25 +80,34 @@ export default function Beranda() {
         <section id="proyek" className="bagian-putih">
           <div className="wadah bagian">
             <p className="label">PROYEK</p>
-            <h2>Dua masalah, dua web yang bisa langsung dicoba</h2>
+            <h2>Contoh yang bisa Anda coba sekarang</h2>
             <div className="grid-kartu">
               {proyek.map((p) => <KartuProyek key={p.id} p={p} />)}
             </div>
           </div>
         </section>
 
-        <section className="wadah bagian">
-          <p className="label">CARA SAYA BEKERJA</p>
-          <h2>Dari masalah dulu, baru kode</h2>
-          <ol className="grid-cara">
-            {CARA_KERJA.map(([judul, isi], i) => (
-              <li key={judul}>
-                <p className="label">{String(i + 1).padStart(2, '0')}</p>
-                <h3>{judul}</h3>
-                <p className="redup">{isi}</p>
-              </li>
-            ))}
-          </ol>
+        <section id="kontak" className="bagian-kontak">
+          <div className="wadah">
+            <div className="pita-gelap kontak">
+              <div className="kontak-teks">
+                <h2>Mencari usaha pertama untuk memakai <span className="tanpa-putus">sistem-sistem</span> ini</h2>
+                <p>
+                  Sistem-sistem di atas sudah bisa dicoba, tapi belum pernah dipakai di usaha sungguhan. Karena itu, usaha
+                  pertama yang memakai salah satunya akan mendapatkannya gratis. Saya juga perlu melihat bagaimana sistem ini
+                  bekerja di tempat yang sebenarnya.
+                </p>
+                <p>Kalau masalah di usaha Anda berbeda, ceritakan saja lewat WhatsApp. Saya buatkan demonya lebih dulu.</p>
+              </div>
+              <div className="kontak-aksi">
+                <TombolWa pesan={PESAN_WA} varian="stabilo" />
+                <div className="kontak-tautan">
+                  <a href={`mailto:${profil.email}`}>{profil.email}</a>
+                  {profil.linkedin && <a href={profil.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="tentang" className="bagian-putih">
@@ -110,38 +115,17 @@ export default function Beranda() {
             <img className="foto" src={profil.foto.src} alt={profil.foto.alt} width="672" height="840" loading="lazy" decoding="async" />
             <div className="tentang-teks">
               <p className="label">TENTANG SAYA</p>
-              <h2>Pernah di balik meja kasir, sekarang membuat kasirnya</h2>
+              <h2>{profil.nama}, developer web di {profil.kota}</h2>
               <p className="redup">
-                Saya {profil.nama}, developer web otodidak di {profil.kota}, lulusan SMK jurusan Teknik Bisnis Sepeda Motor (2021).
+                Sebelum membuat web, saya bekerja di lapangan, dan sekarang menjalankan warung sendiri.
               </p>
               <p className="redup">
-                Sebelum membuat web, saya bekerja di lapangan, dan saya juga menjalankan warung. Dari situ saya tahu rasanya
-                menghitung stok di akhir shift, menjaga toko sambil melayani pelanggan, dan bekerja dengan sistem yang tidak membantu.
-              </p>
-              <p className="redup">
-                Proyek-proyek di sini lahir dari pengalaman itu. Saya bekerja dengan React dan JavaScript, dan merancang sistem
-                dari aturan bisnisnya dulu.
+                Karena itu saya membuat sistem yang mudah dipakai oleh orang yang menjalankannya setiap hari, seperti kasir,
+                crew, dan staf HR.
               </p>
               <ul className="pil-daftar" aria-label="Pengalaman kerja">
                 {RIWAYAT_KERJA.map((r) => <li key={r}>{r}</li>)}
               </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="kontak" className="pita-gelap">
-          <div className="wadah kontak">
-            <div className="kontak-teks">
-              <h2>Punya masalah serupa di usaha Anda?</h2>
-              <p>Ceritakan saja dulu, tidak harus sudah tahu mau dibuatkan apa.</p>
-            </div>
-            <div className="kontak-aksi">
-              <TombolWa pesan={PESAN_WA} varian="stabilo" />
-              <div className="kontak-tautan">
-                <a href={`mailto:${profil.email}`}>{profil.email}</a>
-                {profil.linkedin && <a href={profil.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
-                <a href={profil.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
             </div>
           </div>
         </section>
