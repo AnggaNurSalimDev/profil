@@ -101,7 +101,9 @@ describe('invariant proyek', () => {
 
   it('hasil diurutkan menurut urutan, bukan urutan di file', () => {
     const d = salin().reverse();
-    expect(validasiProyek(d).map((p) => p.urutan)).toEqual([1, 2]);
+    const diharapkan = d.map((p) => p.urutan).sort((a, b) => a - b);
+    expect(diharapkan.length).toBeGreaterThan(1); // invariant: tes ini tidak berarti dengan < 2 proyek
+    expect(validasiProyek(d).map((p) => p.urutan)).toEqual(diharapkan);
   });
 });
 
