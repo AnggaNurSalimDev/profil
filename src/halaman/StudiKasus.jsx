@@ -29,8 +29,9 @@ export default function StudiKasus() {
       <Kepala />
       <main>
         <article className="kolom-baca kasus-awal">
-          <p className="label">PROYEK · {p.nama.toUpperCase()}</p>
-          <h1><JudulSorot judul={p.judul} sorot={p.judulSorot} /></h1>
+          <p className="label">STUDI KASUS</p>
+          <h1>{p.nama}</h1>
+          <p className="kasus-tagline"><JudulSorot judul={p.judul} sorot={p.judulSorot} /></p>
           <div className="baris-tombol">
             <a className="tombol tombol-isi" href={p.demo.url} target="_blank" rel="noopener noreferrer">Coba demo</a>
           </div>

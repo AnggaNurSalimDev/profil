@@ -122,7 +122,7 @@ describe('invariant profil', () => {
 
 describe('cariProyek', () => {
   const daftar = validasiProyek(dataProyek);
-  it('menemukan id yang ada', () => expect(cariProyek(daftar, 'kasir').nama).toBe('Kasir Stok Otomatis'));
+  it('menemukan id yang ada', () => expect(cariProyek(daftar, 'kasir').id).toBe('kasir'));
   it('id tidak ada / kosong / bukan string → null', () => {
     expect(cariProyek(daftar, 'tidak-ada')).toBeNull();
     expect(cariProyek(daftar, '')).toBeNull();

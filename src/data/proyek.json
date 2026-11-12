@@ -1,7 +1,7 @@
 [
   {
     "id": "kasir",
-    "nama": "Kasir Stok Otomatis",
+    "nama": "Sistem Kasir & Stok Bahan",
     "nota": "3 contoh usaha",
     "urutan": 1,
     "judul": "Kasir yang menghitung stok bahan sendiri",
@@ -63,13 +63,13 @@
     ],
     "ajakan": "Stok di usaha Anda juga sering selisih?",
     "og": {
-      "judul": "Kasir Stok Otomatis — Angga Nur Salim",
+      "judul": "Sistem Kasir & Stok Bahan — Angga Nur Salim",
       "deskripsi": "Crew cukup menekan menu; stok bahan berkurang sendiri dan selisih terlihat per shift."
     }
   },
   {
     "id": "rekrut",
-    "nama": "Sistem Rekrutmen",
+    "nama": "Sistem Seleksi Pelamar",
     "nota": "70 pelamar contoh",
     "urutan": 2,
     "judul": "Seleksi pelamar yang cepat dan bisa dipertanggung­jawabkan",
@@ -134,13 +134,13 @@
     ],
     "ajakan": "Kewalahan menyaring pelamar?",
     "og": {
-      "judul": "Sistem Rekrutmen — Angga Nur Salim",
+      "judul": "Sistem Seleksi Pelamar — Angga Nur Salim",
       "deskripsi": "Pelamar dinilai dengan aturan yang sama, ada bukti dari CV, dan HRD tetap memutuskan."
     }
   },
   {
     "id": "hadirku",
-    "nama": "Absensi & Gaji",
+    "nama": "Sistem Absensi & Penggajian",
     "nota": "8 pegawai contoh",
     "urutan": 3,
     "judul": "Absen yang tidak bisa dititipkan, gaji yang terhitung sendiri",
@@ -207,13 +207,13 @@
     ],
     "ajakan": "Masih ada titip absen di usaha Anda?",
     "og": {
-      "judul": "Absensi & Gaji (Hadirku) — Angga Nur Salim",
+      "judul": "Sistem Absensi & Penggajian (Hadirku) — Angga Nur Salim",
       "deskripsi": "Absen satu ketukan yang tidak bisa dititipkan atau dilakukan dari rumah; gaji dan slip terhitung dari aturan yang HR atur sendiri."
     }
   },
   {
     "id": "konveksi",
-    "nama": "Lacak Produksi Konveksi",
+    "nama": "Sistem Lacak Produksi Konveksi",
     "nota": "4 order contoh",
     "urutan": 4,
     "judul": "Lacak setiap pcs dari potong sampai kirim, upah borongan terhitung sendiri",
@@ -284,7 +284,7 @@
     ],
     "ajakan": "Pcs sering selisih atau upah borongan jadi sengketa?",
     "og": {
-      "judul": "Lacak Produksi Konveksi — Angga Nur Salim",
+      "judul": "Sistem Lacak Produksi Konveksi — Angga Nur Salim",
       "deskripsi": "Setiap serah terima dikonfirmasi dua pihak; selisih pcs terlihat per orang dan upah borongan terhitung sendiri."
     }
   }

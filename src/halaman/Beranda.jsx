@@ -16,7 +16,8 @@ function Nota() {
       <div className="nota-sub">{profil.nama} · {profil.kota}</div>
       <hr />
       {proyek.map((p) => (
-        <div className="nota-baris" key={p.id}><span>{p.nama}</span><span>{p.nota}</span></div>
+        // Di nota cukup nama pendek: semua barisnya memang sistem, jadi kata "Sistem" tidak perlu diulang.
+        <div className="nota-baris" key={p.id}><span>{p.nama.replace(/^Sistem\s+/, '')}</span><span>{p.nota}</span></div>
       ))}
       <div className="nota-baris"><span>Demo bisa dicoba</span><span>{proyek.length}</span></div>
       <div className="nota-baris"><span>Biaya mencoba</span><span>Rp 0</span></div>
@@ -33,7 +34,10 @@ function KartuProyek({ p }) {
       <img src={p.gambar.kartu.src} alt={p.gambar.kartu.alt} width="1120" height="680" loading="lazy" decoding="async" />
       <div className="kartu-isi">
         <p className="label">UNTUK: {p.untuk.join(' · ').toUpperCase()}</p>
-        <h3>{p.judul}</h3>
+        <div>
+          <h3>{p.nama}</h3>
+          <p className="kartu-tagline">{p.judul}</p>
+        </div>
         <div>
           <p className="sub-judul">Masalahnya</p>
           <p className="redup">{p.masalah}</p>
