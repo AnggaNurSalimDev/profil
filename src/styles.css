@@ -110,7 +110,22 @@ h2 {
 .bagian > h2 { margin-bottom: 40px; }
 .bagian-putih { background: var(--putih); border-top: 1px solid var(--garis); }
 
-.grid-kartu { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px; }
+/* Kartu proyek: satu baris yang digeser ke samping. Kartu berikutnya sengaja terlihat sebagian
+   sebagai tanda bahwa baris bisa digeser. */
+.geser-kendali { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: -16px 0 20px; }
+.geser-tombol { display: flex; gap: 10px; }
+.tombol-panah {
+  width: 48px; height: 48px; border-radius: 999px; border: 1.5px solid var(--tinta);
+  background: var(--putih); color: var(--tinta); font-size: 20px; line-height: 1; cursor: pointer;
+}
+.tombol-panah:hover:not(:disabled) { background: #F0F0EA; }
+.tombol-panah:disabled { border-color: var(--garis-pil); color: #9AA0AA; cursor: default; }
+.geser-jalur {
+  display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  padding-bottom: 16px; scrollbar-width: thin; scrollbar-color: var(--garis-pil) transparent;
+}
+.geser-jalur > .kartu { flex: 0 0 min(360px, 86%); scroll-snap-align: start; }
+@media (prefers-reduced-motion: reduce) { .geser-jalur { scroll-behavior: auto; } }
 .kartu { display: flex; flex-direction: column; border: 1px solid var(--garis); border-radius: 14px; overflow: hidden; background: var(--latar); }
 .kartu img { width: 100%; height: 240px; object-fit: cover; object-position: left top; border-bottom: 1px solid var(--garis); background: var(--putih); }
 .kartu-isi { padding: 28px; display: flex; flex-direction: column; gap: 16px; flex-grow: 1; }

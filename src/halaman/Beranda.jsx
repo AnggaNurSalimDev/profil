@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { proyek, profil } from '../data/index.js';
 import { Kepala, Kaki, Sorot, TombolWa, useJudulTab } from '../komponen/umum.jsx';
@@ -54,6 +55,55 @@ function KartuProyek({ p }) {
   );
 }
 
+/**
+ * Kartu proyek dalam satu baris yang digeser ke samping (sentuh, trackpad, atau tombol panah),
+ * supaya halaman tidak makin panjang setiap kali proyek bertambah.
+ */
+function GeserProyek({ daftar }) {
+  const jalur = useRef(null);
+  const [ujung, setUjung] = useState({ awal: true, akhir: false });
+
+  const perbarui = useCallback(() => {
+    const el = jalur.current;
+    if (!el) return;
+    setUjung({ awal: el.scrollLeft <= 4, akhir: el.scrollLeft + el.clientWidth >= el.scrollWidth - 4 });
+  }, []);
+
+  useEffect(() => {
+    perbarui();
+    window.addEventListener('resize', perbarui);
+    return () => window.removeEventListener('resize', perbarui);
+  }, [perbarui]);
+
+  const geser = (arah) => {
+    const el = jalur.current;
+    if (!el) return;
+    const kartu = el.querySelector('.kartu');
+    const jarak = Number.parseFloat(getComputedStyle(el).columnGap) || 0;
+    const langkah = kartu ? kartu.offsetWidth + jarak : el.clientWidth;
+    const tenang = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el.scrollBy({ left: arah * langkah, behavior: tenang ? 'auto' : 'smooth' });
+  };
+
+  const bisaGeser = !(ujung.awal && ujung.akhir);
+  return (
+    <div className="geser">
+      {bisaGeser && (
+        <div className="geser-kendali">
+          <p className="label">{daftar.length} PROYEK · GESER KE SAMPING</p>
+          <div className="geser-tombol">
+            <button type="button" className="tombol-panah" aria-label="Proyek sebelumnya" disabled={ujung.awal} onClick={() => geser(-1)}>←</button>
+            <button type="button" className="tombol-panah" aria-label="Proyek berikutnya" disabled={ujung.akhir} onClick={() => geser(1)}>→</button>
+          </div>
+        </div>
+      )}
+      <div className="geser-jalur" ref={jalur} onScroll={perbarui} role="region" aria-label="Daftar proyek" tabIndex={0}>
+        {daftar.map((p) => <KartuProyek key={p.id} p={p} />)}
+      </div>
+    </div>
+  );
+}
+
 export default function Beranda() {
   useJudulTab(null);
   return (
@@ -81,9 +131,7 @@ export default function Beranda() {
           <div className="wadah bagian">
             <p className="label">PROYEK</p>
             <h2>Contoh yang bisa Anda coba sekarang</h2>
-            <div className="grid-kartu">
-              {proyek.map((p) => <KartuProyek key={p.id} p={p} />)}
-            </div>
+            <GeserProyek daftar={proyek} />
           </div>
         </section>
 
