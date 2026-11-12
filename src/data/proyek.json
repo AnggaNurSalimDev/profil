@@ -210,5 +210,82 @@
       "judul": "Absensi & Gaji (Hadirku) — Angga Nur Salim",
       "deskripsi": "Absen satu ketukan yang tidak bisa dititipkan atau dilakukan dari rumah; gaji dan slip terhitung dari aturan yang HR atur sendiri."
     }
+  },
+  {
+    "id": "konveksi",
+    "nama": "Lacak Produksi Konveksi",
+    "nota": "4 order contoh",
+    "urutan": 4,
+    "judul": "Lacak setiap pcs dari potong sampai kirim, upah borongan terhitung sendiri",
+    "judulSorot": "setiap pcs",
+    "untuk": [
+      "konveksi",
+      "usaha makloon",
+      "garmen skala menengah"
+    ],
+    "masalah": "Barang berpindah tangan berkali-kali: potong, sablon, jahit, finishing. Pcs selisih tanpa jejak, upah borongan dihitung manual, dan penjahit disalahkan untuk cacat yang bukan dari jahitannya.",
+    "solusi": "Setiap serah terima dikonfirmasi penerima dari HP. Selisih terlihat per orang, reject wajib dicatat penyebabnya, dan upah borongan terhitung sendiri.",
+    "masalahPanjang": "Di konveksi, satu order ratusan seragam melewati tukang potong, vendor sablon, beberapa penjahit borongan, lalu finishing. Setiap perpindahan biasanya hanya dicatat di buku mandor. Saat jumlahnya tidak cocok, tidak jelas pcs itu hilang di tangan siapa. Saat ada reject, yang dipotong upahnya sering penjahit, padahal potongannya sudah miring dari awal. Owner baru tahu order telat menjelang deadline, dan pembeli bertanya “sudah sampai mana?” lewat WA berkali-kali, sementara revisi ukuran atau warna tenggelam di chat.",
+    "demo": {
+      "url": "https://konveksi-demo.vercel.app",
+      "akun": null,
+      "catatan": "Data contoh 4 order fiktif, tersimpan di browser Anda. Tanpa login: ganti peran lewat “Lihat sebagai”."
+    },
+    "langkah": [
+      "Buka “Skenario terpandu” → B: lihat selisih 5 pcs Budi di dashboard owner, lalu bereskan sebagai admin.",
+      "Skenario F: admin salah ketik 210 pcs, penjahit menolak dari HP-nya, lalu admin mengoreksi tanpa menghapus catatan lama.",
+      "Skenario D: buka link pembeli, setujui versi 2 spesifikasi, lalu owner memutuskan kerja ulang dibayar atau tidak."
+    ],
+    "keputusan": [
+      {
+        "judul": "Serah terima baru sah setelah penerima mengonfirmasi",
+        "isi": "Admin mencatat, penerima menekan “Sesuai” atau “Tidak sesuai” di HP-nya. Angka yang dipakai untuk selisih dan upah adalah angka yang disepakati kedua pihak."
+      },
+      {
+        "judul": "Reject wajib dicatat penyebabnya",
+        "isi": "Bahan, potong, jahit, atau finishing. Upah hanya dipotong bila penyebabnya pekerjaan orang itu sendiri, jadi penjahit tidak menanggung potongan miring dari tahap sebelumnya."
+      },
+      {
+        "judul": "Catatan tidak pernah diubah atau dihapus",
+        "isi": "Salah catat diperbaiki dengan baris koreksi baru; baris lama tetap terlihat berstatus “Dikoreksi”. Upah yang sudah difinalkan tidak bisa berubah lagi."
+      },
+      {
+        "judul": "Selisih baru disorot setelah setoran terakhir",
+        "isi": "Barang yang masih dijahit bukan barang hilang. Dashboard owner hanya menyorot selisih setelah admin menandai setoran terakhir, supaya tidak penuh peringatan palsu."
+      },
+      {
+        "judul": "Pembeli menyetujui spesifikasi lewat link",
+        "isi": "Tanpa akun. Perubahan dari pembeli menjadi versi baru yang ditandai, dan produksi tetap mengikuti versi yang sudah disetujui sampai versi baru disetujui."
+      }
+    ],
+    "gambar": {
+      "kartu": {
+        "src": "/proyek/konveksi/kartu.webp",
+        "alt": "Dashboard owner: 4 order berjalan, 1 terancam telat, selisih 5 pcs perlu dicek, dan tabel order dengan progres QC dan status deadline"
+      },
+      "galeri": [
+        {
+          "src": "/proyek/konveksi/setoran-ditolak.webp",
+          "alt": "Halaman admin order ORD-031: progres per tahap, form serah terima, form setoran dengan reject per penyebab, dan panel server yang menolak setoran 6 pcs karena Budi hanya memegang 5 pcs",
+          "keterangan": "Setoran 6 pcs ditolak karena yang tercatat di tangan Budi hanya 5. Setiap pemeriksaan terlihat di panel server."
+        },
+        {
+          "src": "/proyek/konveksi/hp-pekerja-pembeli.webp",
+          "alt": "Dua layar HP: penjahit Ani melihat pekerjaannya, reject karena potongan miring yang tetap dibayar, dan upah berjalan; pembeli melihat status produksi dan lembar spesifikasi versi 2 dengan logo yang berubah",
+          "keterangan": "Kiri: HP penjahit, upahnya terhitung sendiri. Kanan: link pembeli tanpa login untuk menyetujui perubahan spesifikasi."
+        }
+      ]
+    },
+    "belum": [
+      "Belum diuji di konveksi sungguhan. Masalah yang dipecahkan masih hipotesis dari pola umum usaha konveksi.",
+      "Demo berjalan sepenuhnya di browser. Rancangan backend (PostgreSQL dan kontrak API) sudah ditulis tetapi belum dibangun.",
+      "Potongan yang dikembalikan sebelum dikerjakan, dan stok potongan di admin, belum dilacak.",
+      "Rumus peringatan deadline masih sementara, menunggu data kecepatan produksi nyata."
+    ],
+    "ajakan": "Pcs sering selisih atau upah borongan jadi sengketa?",
+    "og": {
+      "judul": "Lacak Produksi Konveksi — Angga Nur Salim",
+      "deskripsi": "Setiap serah terima dikonfirmasi dua pihak; selisih pcs terlihat per orang dan upah borongan terhitung sendiri."
+    }
   }
 ]
